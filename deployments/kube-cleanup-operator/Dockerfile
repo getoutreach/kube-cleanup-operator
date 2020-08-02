@@ -24,6 +24,11 @@ RUN --mount=type=ssh set -e -x; \
   git config --global url."git@github.com:".insteadOf "https://github.com/"; \
   go mod download
 
+COPY go.mod .
+COPY go.sum .
+
+RUN go mod download
+
 COPY . /build
 WORKDIR /build
 RUN go test ./...
