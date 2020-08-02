@@ -28,7 +28,7 @@ COPY . /build
 WORKDIR /build
 RUN go test ./...
 RUN make install_deps
-RUN build
+RUN make build
 
 FROM gcr.io/outreach-docker/alpine:3.11
 MAINTAINER Sergey Nuzhdin <ipaq.lw@gmail.com>
